@@ -1,17 +1,18 @@
-# @rmw/cache-dir
+# @rmw/env
 
 ##  安装
 
 ```
-npm install @rmw/cache-dir
+npm install @rmw/env
 ```
 
 ## 使用
 
 ```
-import CACHE_DIR from '@rmw/cache-dir'
+import DIR_CACHE from '@rmw/env/dir/cache'
+import DIR_CONFIG from '@rmw/env/dir/config'
 
-console.log CACHE_DIR
+console.log DIR_CACHE, DIR_CONFIG
 ```
 
 ## 关于

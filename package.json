@@ -1,12 +1,12 @@
 {
-  "name": "@rmw/cache-dir",
+  "name": "@rmw/env",
   "version": "0.0.1",
-  "repository": "https://github.com/rmw-lib/cache-dir",
+  "repository": "https://github.com/rmw-lib/env",
   "author": "i@rmw.link",
   "license": "MulanPSL-2.0",
   "exports": {
-    ".": "./lib/index.js",
-    "./": "./lib/"
+    "./dir/cache": "./lib/dir/cache.js",
+    "./dir/config": "./lib/dir/config.js"
   },
   "files": [
     "/lib"
