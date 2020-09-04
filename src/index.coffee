@@ -2,5 +2,7 @@
 
 import {homedir} from 'os'
 import {join} from 'path'
+import {mkdirSync} from 'fs'
 
-CACHE_DIR = process.env.RMW_CACHE or join(homedir(),".cache/rmw")
+export default CACHE_DIR = process.env.RMW_CACHE or join(homedir(),".cache/rmw")
+mkdirSync(CACHE_DIR, { recursive: true })

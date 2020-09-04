@@ -9,8 +9,9 @@ npm install @rmw/cache-dir
 ## 使用
 
 ```
-import cache-dir from '@rmw/cache-dir'
+import CACHE_DIR from '@rmw/cache-dir'
 
+console.log CACHE_DIR
 ```
 
 ## 关于
