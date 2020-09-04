@@ -12,7 +12,8 @@ npm install @rmw/env
 import DIR_CACHE from '@rmw/env/dir/cache'
 import DIR_CONFIG from '@rmw/env/dir/config'
 
-console.log DIR_CACHE, DIR_CONFIG
+console.log DIR_CACHE
+console.log DIR_CONFIG
 ```
 
 ## 关于
