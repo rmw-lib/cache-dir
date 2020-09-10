@@ -2,9 +2,9 @@ import {dirname,join} from 'path'
 import {mkdirSync, readFileSync, existsSync} from 'fs'
 import {homedir} from 'os'
 
-export package_json = ->
+export package_json = (skip=4)->
   {stack} = new Error()
-  stack = stack.split("\n",4).pop()
+  stack = stack.split("\n",skip).pop()
   pos = stack.indexOf("://")
   dirpath = dirname stack[pos+3..].split(":",1)[0]
   while 1
@@ -20,18 +20,22 @@ export project_name = (name)=>
   [name[1...pos],name[pos+1..]]
 
 
-export default new Proxy(
-  {}
-  get:(self, attr)->
-    {name} = package_json()
-    [project, name] = project_name name
 
-    dirpath = process.env[project.toUpperCase()+"_"+name.toUpperCase()+"_"+attr]
+export Env = (skip)=>
+  new Proxy(
+    {}
+    get:(self, attr)->
+      {name} = package_json(skip)
+      [project, name] = project_name name
 
-    if not dirpath
-      dirpath = join homedir(),"."+attr.toLowerCase(),project,name
+      dirpath = process.env[project.toUpperCase()+"_"+name.toUpperCase()+"_"+attr]
 
-    mkdirSync dirpath,recursive:true
-    dirpath
+      if not dirpath
+        dirpath = join homedir(),"."+attr.toLowerCase(),project,name
 
-)
+      mkdirSync dirpath,recursive:true
+      dirpath
+
+  )
+
+export default Env(4)
