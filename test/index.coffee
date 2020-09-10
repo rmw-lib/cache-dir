@@ -1,10 +1,9 @@
 #!/usr/bin/env coffee
 
-import DIR_CACHE from '../src/cache'
-import DIR_CONFIG from '../src/config'
+import ENV from '../src/index'
 import test from 'tape'
 
 test 'env', (t)=>
-  console.log DIR_CACHE
-  console.log DIR_CONFIG
+  console.log ENV.CONFIG
+  console.log ENV.CACHE
   t.end()

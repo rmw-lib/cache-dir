@@ -5,14 +5,12 @@
   "author": "i@rmw.link",
   "license": "MulanPSL-2.0",
   "exports": {
-    "./dir/cache": "./lib/dir/cache.js",
-    "./dir/config": "./lib/dir/config.js"
+    ".": "./lib/index.js"
   },
   "files": [
     "/lib"
   ],
   "dependencies": {
-    "@rmw/thisfile": "^0.0.2"
   },
   "devDependencies": {
     "coffeescript": "^2.5.1",
