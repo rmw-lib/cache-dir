@@ -4,6 +4,7 @@ import {homedir} from 'os'
 
 export package_json = ->
   {stack} = new Error()
+  stack = stack.split("\n",4).pop()
   pos = stack.indexOf("://")
   dirpath = dirname stack[pos+3..].split(":",1)[0]
   while 1
