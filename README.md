@@ -19,7 +19,7 @@ npm install @rmw/env
 ```
 #!/usr/bin/env coffee
 
-import ENV from '../src/index'
+import ENV from '@rmw/env'
 import test from 'tape'
 
 test 'env', (t)=>
