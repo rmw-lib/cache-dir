@@ -19,8 +19,6 @@ export project_name = (name)=>
   pos = name.indexOf '/'
   [name[1...pos],name[pos+1..]]
 
-
-
 export Env = (skip)=>
   new Proxy(
     {}
