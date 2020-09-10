@@ -12,13 +12,14 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "@rmw/md-include": "^0.4.5",
     "coffeescript": "^2.5.1",
     "colortape": "^0.1.2",
     "nodemon": "^2.0.4",
     "tape": "^5.0.1"
   },
   "scripts": {
-    "prepare": "rm -rf lib && rsync -av --include='*/' --include='*.js' --exclude=* src/ lib/ && npx coffee --compile --output lib src/"
+    "prepare": "./.git/hooks/pre-commit && rm -rf lib && rsync -av --include='*/' --include='*.js' --include='*.mjs' --exclude=* src/ lib/ && npx coffee --compile --output lib src/"
   },
   "type": "module"
 }

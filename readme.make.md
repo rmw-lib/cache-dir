@@ -3,17 +3,19 @@
 ##  安装
 
 ```
+yarn add @rmw/env
+```
+
+或者
+
+```
 npm install @rmw/env
 ```
 
 ## 使用
 
 ```
-import DIR_CACHE from '@rmw/env/dir/cache'
-import DIR_CONFIG from '@rmw/env/dir/config'
-
-console.log DIR_CACHE
-console.log DIR_CONFIG
+#include ./test/index.coffee
 ```
 
 ## 关于
