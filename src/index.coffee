@@ -2,9 +2,9 @@ import {dirname,join} from 'path'
 import {mkdirSync, readFileSync, existsSync} from 'fs'
 import {homedir} from 'os'
 
-export package_json = (skip=4)->
+export package_json = (skip=0)->
   {stack} = new Error()
-  stack = stack.split("\n",skip).pop()
+  stack = stack.split("\n",4+skip).pop()
   pos = stack.indexOf("://")
   dirpath = dirname stack[pos+3..].split(":",1)[0]
   while 1
@@ -19,7 +19,7 @@ export project_name = (name)=>
   pos = name.indexOf '/'
   [name[1...pos],name[pos+1..]]
 
-export Env = (skip)=>
+export Env = (skip=0)=>
   new Proxy(
     {}
     get:(self, attr)->
@@ -36,4 +36,4 @@ export Env = (skip)=>
 
   )
 
-export default Env(4)
+export default Env()
