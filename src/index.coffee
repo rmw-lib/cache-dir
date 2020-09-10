@@ -2,11 +2,18 @@ import {dirname,join} from 'path'
 import {readFileSync, existsSync} from 'fs'
 import {homedir} from 'os'
 
+export stack = =>
+  {prepareStackTrace} = Error
+  Error.prepareStackTrace = (error, stack) => stack
+  err = new Error()
+  r = err.stack.slice(4)
+  Error.prepareStackTrace = prepareStackTrace
+  r
+
 export package_json = (skip=0)->
-  {stack} = new Error()
-  stack = stack.split("\n",4+skip).pop()
-  pos = stack.indexOf("://")
-  dirpath = dirname stack[pos+3..].split(":",1)[0]
+  caller = stack()[skip].getFileName()
+  pos = caller.indexOf("://")
+  dirpath = dirname caller[pos+3..].split(":",1)[0]
   while 1
     jp = join dirpath, "package.json"
     if existsSync jp
