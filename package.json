@@ -11,7 +11,9 @@
   "files": [
     "/lib"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@rmw/thisfile": "^0.0.2"
+  },
   "devDependencies": {
     "coffeescript": "^2.5.1",
     "colortape": "^0.1.2",
