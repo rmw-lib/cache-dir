@@ -1,5 +1,5 @@
 import {dirname,join} from 'path'
-import {mkdirSync, readFileSync, existsSync} from 'fs'
+import {readFileSync, existsSync} from 'fs'
 import {homedir} from 'os'
 
 export package_json = (skip=0)->
@@ -31,7 +31,6 @@ export Env = (skip=0)=>
       if not dirpath
         dirpath = join homedir(),"."+attr.toLowerCase(),project,name
 
-      mkdirSync dirpath,recursive:true
       dirpath
 
   )
