@@ -6,7 +6,7 @@ export stack = =>
   {prepareStackTrace} = Error
   Error.prepareStackTrace = (error, stack) => stack
   err = new Error()
-  r = err.stack
+  r = err.stack.slice(3)
   Error.prepareStackTrace = prepareStackTrace
   r
 
