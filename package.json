@@ -1,6 +1,6 @@
 {
   "name": "@rmw/env",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "https://github.com/rmw-lib/env",
   "author": "i@rmw.link",
   "license": "MulanPSL-2.0",
@@ -10,8 +10,7 @@
   "files": [
     "/lib"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "coffeescript": "^2.5.1",
     "colortape": "^0.1.2",
