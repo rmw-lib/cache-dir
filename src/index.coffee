@@ -34,10 +34,15 @@ export Env = (offset=0)=>
       {name} = package_json(offset+1)
       [project, name] = project_name name
 
-      dirpath = process.env[project.toUpperCase()+"_"+name.toUpperCase()+"_"+attr]
+      dirpath = process.env[project+"_"+name+"_"+attr]
 
       if not dirpath
-        dirpath = join homedir(),"."+attr.toLowerCase(),project,name
+        home = process.env[project]
+        if home
+          home = join home, attr
+        else
+          home =  join homedir(),"."+attr,project
+        dirpath = join home,name
 
       dirpath
 
