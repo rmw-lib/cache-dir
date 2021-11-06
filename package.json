@@ -3,9 +3,10 @@
   "version": "0.0.17",
   "repository": "https://github.com/rmw-lib/env",
   "author": "i@rmw.link",
-  "license": "MulanPSL-2.0",
+  "license": "AGPL",
   "exports": {
-    ".": "./lib/index.js"
+    ".": "./lib/index.js",
+    "./*": "./lib/*"
   },
   "files": [
     "/lib"
@@ -20,7 +21,7 @@
     "tape": "^5.0.1"
   },
   "scripts": {
-    "prepare": "./.git/hooks/pre-commit && rm -rf lib && rsync -av --include='*/' --include='*.js' --include='*.mjs' --exclude=* src/ lib/ && npx coffee --compile --output lib src/"
+    "prepare": "rm -rf lib && rsync -av --include='*/' --include='*.js' --include='*.mjs' --exclude=* src/ lib/ && npx coffee --compile --output lib src/"
   },
   "type": "module"
 }
